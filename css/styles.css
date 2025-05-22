@@ -5,37 +5,133 @@ body {
 /* 👇👇👇 Paste the styles of your Fancy Robot from the "Position it right" assignment here 👇👇👇 */
 
 .robot-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+  min-height: calc(100vh - 120px);
 }
 
 .robot-face-shape {
+  width: 300px;
+  height: 300px;
+  background-color: #f0f8ff;
+  border: 5px solid #4682b4;
+  border-radius: 20%;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.robot-eye-left {
-}
-
+.robot-eye-left,
 .robot-eye-right {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff6f61, #d84315);
+  position: absolute;
+  top: 70px;
+}
+.robot-eye-left {
+  left: 60px;
+  animation: blink 2s infinite;
+}
+.robot-eye-right {
+  right: 60px;
+  animation: stretch 4s infinite alternate;
 }
 
-.robot-ear-left {
-}
-
+.robot-ear-left,
 .robot-ear-right {
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  background-color: #a0522d;
+  border-radius: 30%;
+}
+.robot-ear-left {
+  left: 60%;
+  animation: rotate360 10s linear infinite;
+}
+.robot-ear-right {
+  right: 59%;
+  animation: slideFade 2s ease-in-out infinite alternate;
 }
 
 .robot-nose {
+  width: 30px;
+  height: 50px;
+  background-color: #333;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+  top: 130px;
+  left: 46%;
+}
+.robot-nose:hover {
+  transform: translateX(-50%);
+  animation: stretch 2s ease-in-out infinite;
 }
 
-.robot-nose:before {
-}
-
-.robot-nose:after {
+.robot-mouth {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50% / 100%;
+  animation: orbit 1s infinite linear;
 }
 
 .robot-teeth {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .robot-tooth {
+  width: 0.8em;
+  height: 1.5em;
+  background-color: white;
+  border: 1px solid black;
+  opacity: 0.5;
+  animation: colorChange 3s infinite;
 }
 
 .robot-hair-style {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  animation: triangleBounce 2s infinite;
+}
+
+.robot-hair-one {
+  width: 20px;
+  height: 50px;
+  background-color: green;
+  border-radius: 25%;
+}
+
+.robot-hair-two {
+  width: 20px;
+  height: 40px;
+  background-image: linear-gradient(to top, #00c6ff, #0072ff);
+  border-radius: 20%;
+}
+
+.robot-hair-three {
+  width: 20px;
+  height: 35px;
+  background-image: url(https://picsum.photos/20/50);
+  background-size: cover;
+  background-position: center;
+  border-radius: 20%;
 }
